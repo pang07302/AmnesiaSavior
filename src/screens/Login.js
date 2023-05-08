@@ -1,10 +1,10 @@
 import React from 'react';
-import { StyleSheet, View, Text, Button, Pressable } from 'react-native';
+import { StyleSheet, View, Text, Pressable } from 'react-native';
 import {useFonts} from 'expo-font';
 import InputField from '../components/forms/InputField';
 import TopBar from '../components/TopBar';
 import RoundButton from '../components/buttons/RoundButton';
-import SquareButton from '../components/buttons/SquareButton';
+import SocialLoginServices from '../components/SocialLoginServices';
 
 const Login = () => {
     const [loaded] = useFonts({
@@ -19,6 +19,8 @@ const Login = () => {
             <TopBar 
                 title={'Log in'} 
                 onPress={()=>console.log('back')}/>
+
+            {/* ----------------Middle------------------- */}
             <View style={{alignItems:'center', justifyContent:'center', backgroundColor:'yellow'}}>   
                 <InputField 
                     label={'Your Email'} 
@@ -36,29 +38,14 @@ const Login = () => {
                     </Pressable>  
                 </View>      
             </View>  
-                 
-                
-                  
-              
 
+              {/* ---------------Footer--------------------    */}
             <View style={styles.buttonContainer}>
                 <RoundButton
                     label={"Log in"}
                     onPress={() => console.log("Log in")}/>
-                <Text style={styles.reminder}>or continue with</Text>
-                <View style={styles.squareBtnContainer}>
-                    <SquareButton
-                        iconSource={'google'}
-                        onPress={()=>console.log('press google button')}/>
-
-                    <SquareButton
-                        iconSource={'facebook'}
-                        onPress={()=>console.log('press facebook button')}/>
-
-                    <SquareButton
-                        iconSource={'apple'}
-                        onPress={()=>console.log('press facebook button')}/>
-                </View>
+                
+                <SocialLoginServices/>
 
             </View>
             <View style={styles.footerContainer}>
@@ -91,14 +78,6 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         //borderWidth: 2,
         height: 300
-    },
-    squareBtnContainer: {
-        flexDirection: 'row',
-    },
-    reminder: {
-        fontSize: 18,
-        fontFamily:'Roboto-Light',
-        color: '#696969'
     },
     footerContainer: {
         flexDirection: 'row', 
