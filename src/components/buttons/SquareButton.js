@@ -1,12 +1,12 @@
 import React from 'react';
-import { StyleSheet, View, Text, Pressable } from 'react-native';
+import { StyleSheet, View, Pressable } from 'react-native';
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 
 const SquareButton = ({iconSource, onPress}) => {
     return (
         <View style={styles.buttonContainer}>
             <Pressable style={styles.button} onPress={onPress}>
-                <FontAwesome name={iconSource} size={20} style={styles.buttonIcon} />
+                <FontAwesome name={iconSource} size={25} style={styles.buttonIcon} />
             </Pressable>
 
         </View>
@@ -15,7 +15,7 @@ const SquareButton = ({iconSource, onPress}) => {
 
 const styles = StyleSheet.create({
     buttonIcon: {
-        paddingHorizontal: 10
+        paddingHorizontal: 15
     },
     button: {
         borderRadius: 2,
@@ -24,17 +24,17 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderStyle: 'solid',
         borderWidth: 1,
-        paddingHorizontal: 10,
-        paddingVertical: 10
+        paddingHorizontal: 7,
+        paddingVertical: 15
     },
     buttonContainer: {
         alignItems: 'center',
         justifyContent: 'center',
-        padding: 3,
-        marginHorizontal: 20,
-        width: 100,
-        height: 100,
-        borderWidth: 3
+        //padding: 2,
+        marginHorizontal: 10,
+        width: 70,
+        height: 80,
+        //borderWidth: 3
         
 
 
