@@ -30,8 +30,7 @@ const styles = StyleSheet.create({
     height: 40,
     flexDirection: "row",
     marginTop: 56,
-
-    backgroundColor: "#00ffff", //delete
+    //backgroundColor: "#00ffff", //delete
   },
   iconContainer: {
     position: "absolute",

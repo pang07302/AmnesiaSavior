@@ -2,7 +2,7 @@ import React from 'react';
 import {useFonts} from 'expo-font'
 import { StyleSheet, View, Text, Pressable } from 'react-native';
 
-const RoundButton = ({label, onPress}) => {
+const BasicButton = ({label, onPress}) => {
     const [loaded] = useFonts({
        'Roboto-Medium': require('../../../assets/fonts/Roboto-Medium.ttf')
     })
@@ -50,4 +50,4 @@ const styles = StyleSheet.create({
     }
 })
 
-export default RoundButton;
+export default BasicButton;
