@@ -31,7 +31,7 @@ const styles = StyleSheet.create({
         // height: 20,
         //borderWidth: 2,
         marginTop: 32,
-        backgroundColor:'red'
+        //backgroundColor:'red'
     },
     inputField: {
         marginTop: 8,

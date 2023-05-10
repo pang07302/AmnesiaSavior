@@ -1,7 +1,7 @@
 import React from 'react';
 import { StyleSheet, View, Text, Pressable } from 'react-native';
 import {useFonts} from 'expo-font';
-import SquareButton from './buttons/SquareButton';
+import IconButton from './buttons/IconButton';
 
 const SocialLoginServices = () => {
     const [loaded] = useFonts({
@@ -15,15 +15,15 @@ const SocialLoginServices = () => {
         <>
             <Text style={styles.text}>or continue with</Text>
             <View style={styles.btnContainer}>
-                <SquareButton
+                <IconButton
                     iconSource={'google'}
                     onPress={()=>console.log('press google button')}/>
 
-                <SquareButton
+                <IconButton
                     iconSource={'facebook'}
                     onPress={()=>console.log('press facebook button')}/>
 
-                <SquareButton
+                <IconButton
                     iconSource={'apple'}
                     onPress={()=>console.log('press facebook button')}/>
             </View>
@@ -40,6 +40,7 @@ const styles = StyleSheet.create({
     },
     btnContainer: {
         flexDirection: 'row',
+        marginTop: 8
     }
 
 

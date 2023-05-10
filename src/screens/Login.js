@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, Pressable } from 'react-native';
 import {useFonts} from 'expo-font';
 import InputField from '../components/forms/InputField';
 import TopBar from '../components/TopBar';
-import RoundButton from '../components/buttons/RoundButton';
+import BasicButton from '../components/buttons/BasicButton';
 import SocialLoginServices from '../components/SocialLoginServices';
 
 const Login = () => {
@@ -21,7 +21,7 @@ const Login = () => {
                 onPress={()=>console.log('back')}/>
 
             {/* ----------------Middle------------------- */}
-            <View style={{alignItems:'center', justifyContent:'center', backgroundColor:'yellow'}}>   
+            <View style={{alignItems:'center', justifyContent:'center'}}>   
                 <InputField 
                     label={'Your Email'} 
                     onChangeText={()=>console.log('text changed')}
@@ -41,7 +41,7 @@ const Login = () => {
 
               {/* ---------------Footer--------------------    */}
             <View style={styles.buttonContainer}>
-                <RoundButton
+                <BasicButton
                     label={"Log in"}
                     onPress={() => console.log("Log in")}/>
                 
@@ -51,7 +51,7 @@ const Login = () => {
             <View style={styles.footerContainer}>
                     <Text style={styles.footerText}>Don't have an account?</Text>
                     <Pressable onPress={() => console.log('direct to sign up screen')}>
-                        <Text style={[styles.footerText, {color: 'black'}]}> Sign up</Text>
+                        <Text style={[styles.footerText, {color: 'black', fontWeight:'bold'}]}> Sign up</Text>
                     </Pressable>
             </View>
 
@@ -86,7 +86,6 @@ const styles = StyleSheet.create({
     },
     footerText: {
         fontSize: 20,
-        //fontFamily:'Roboto-Regular',
         color: '#696969'
     }
 

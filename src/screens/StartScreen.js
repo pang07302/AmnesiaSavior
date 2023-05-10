@@ -2,7 +2,7 @@ import React from 'react';
 import { StyleSheet, View, Text } from 'react-native';
 import {useFonts} from 'expo-font';
 import ImageViewer from '../components/ImageViewer';
-import RoundButton from '../components/buttons/RoundButton';
+import RoundButton from '../components/buttons/BasicButton';
 
 const PlaceholderImage = require('./../assets/starting_image.png');
 
