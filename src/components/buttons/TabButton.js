@@ -1,12 +1,13 @@
 import React from "react";
-import { StyleSheet, View, Pressable } from "react-native";
-import FontAwesome from "@expo/vector-icons/FontAwesome";
+import { StyleSheet, View, Pressable, Text } from "react-native";
+import { FontAwesome } from "@expo/vector-icons";
 
-const SquareButton = ({ iconSource, onPress }) => {
+const TabButton = ({ iconSource, onPress, label }) => {
   return (
     <View style={styles.buttonContainer}>
       <Pressable style={styles.button} onPress={onPress}>
-        <FontAwesome name={iconSource} size={25} style={styles.buttonIcon} />
+        <FontAwesome name={iconSource} size={24} style={styles.buttonIcon} />
+        <Text>{label}</Text>
       </Pressable>
     </View>
   );
@@ -22,7 +23,7 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     borderStyle: "solid",
-    borderWidth: 1,
+    // borderWidth: 1,
     paddingHorizontal: 7,
     paddingVertical: 15,
   },
@@ -30,11 +31,12 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     //padding: 2,
-    marginHorizontal: 10,
+    marginHorizontal: 5,
     width: 70,
-    height: 80,
+    height: 70,
+
     //borderWidth: 3
   },
 });
 
-export default SquareButton;
+export default TabButton;
