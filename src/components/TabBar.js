@@ -56,6 +56,7 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(229, 229, 229, 0.6)", //#E5E5E5
     alignItems: "flex-end",
     flexDirection: "row",
+    position: "absolute",
   },
   tabContainer: {
     flexDirection: "row",
