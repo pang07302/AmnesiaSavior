@@ -5,6 +5,7 @@ import InputField from '../components/forms/InputField';
 import TopBar from '../components/TopBar';
 import BasicButton from '../components/buttons/BasicButton';
 import SocialLoginServices from '../components/SocialLoginServices';
+import { mainStyles } from '../theme/mainStyle';
 
 const Login = () => {
     const [loaded] = useFonts({
@@ -21,7 +22,7 @@ const Login = () => {
                 onPress={()=>console.log('back')}/>
 
             {/* ----------------Middle------------------- */}
-            <View style={{alignItems:'center', justifyContent:'center'}}>   
+            <View style={{position:'relative',alignItems:'center', justifyContent:'center'}}>   
                 <InputField 
                     label={'Your Email'} 
                     onChangeText={()=>console.log('text changed')}
@@ -66,6 +67,15 @@ const styles = StyleSheet.create({
         flex: 1,
         width:'100%'
         //borderWidth: 3
+    },
+    header:{
+
+    },
+    body:{
+
+    },
+    footer:{
+
     },
     forgetPwdTxt: {
         textAlign: 'right',

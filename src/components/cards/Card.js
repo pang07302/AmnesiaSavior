@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
         borderRadius: 12,
         padding: 8,
         height: 56,
-        backgroundColor: '#fffff',
+        backgroundColor: '#f2f3f4',
         // might be changed as it does not work with android 
         shadowColor: '#171717',
         shadowOffset: {width: -2, height: 4},
