@@ -49,8 +49,7 @@ const TabBar = () => {
 
 const styles = StyleSheet.create({
   container: {
-    width: "100%",
-    height: "8%",
+    height: "64%",
     bottom: 0,
     paddingBottom: 8,
     backgroundColor: "rgba(229, 229, 229, 0.6)", //#E5E5E5

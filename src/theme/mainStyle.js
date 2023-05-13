@@ -29,14 +29,20 @@ export const Footer = ({ children }) => {
 const mainStyles = StyleSheet.create({
   header: {
     flex: "1",
-    backgroundColor: "ddeedd",
+
+    borderWidth: 1,
+    borderColor: "green",
   },
   body: {
-    backgroundColor: "#eeeeee",
     flex: "6",
+
+    borderWidth: 1,
+    borderColor: "red",
   },
   footer: {
     flex: "1",
-    backgroundColor: "#dddddd",
+
+    borderWidth: 1,
+    borderColor: "blue",
   },
 });

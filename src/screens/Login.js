@@ -55,12 +55,13 @@ const Login = () => {
           <BasicButton label={"Log in"} onPress={() => console.log("Log in")} />
           <SocialLoginServices />
         </View>
-        <View style={styles.othersContainer}>
-          <Text style={styles.othersText}>Don't have an account?</Text>
+
+        <View style={styles.signUpContainer}>
+          <Text style={styles.signUpText}>Don't have an account?</Text>
           <Pressable onPress={() => console.log("direct to sign up screen")}>
             <Text
               style={[
-                styles.othersText,
+                styles.signUpText,
                 { color: "black", fontWeight: "bold" },
               ]}
             >
@@ -82,7 +83,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "100%",
-    //borderWidth: 3
   },
   forgetPwdTxt: {
     textAlign: "right",
@@ -93,15 +93,14 @@ const styles = StyleSheet.create({
   buttonContainer: {
     alignItems: "center",
     justifyContent: "center",
-    //borderWidth: 2,
     height: 300,
   },
-  othersContainer: {
+  signUpContainer: {
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "center",
   },
-  othersText: {
+  signUpText: {
     fontSize: 20,
     color: "#696969",
   },
