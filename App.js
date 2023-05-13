@@ -7,15 +7,17 @@ import Card from "./src/components/cards/Card";
 import IconButton from "./src/components/buttons/IconButton";
 import TabBar from "./src/components/TabBar";
 import TopBar from "./src/components/TopBar";
+import BlankPage from "./src/screens/BlankPage";
 
 export default function App() {
   return (
     <View style={styles.container}>
       <StatusBar style="auto" />
       {/* <StartScreen/> */}
-      <Login/>
+      <Login />
       {/* <Register/> */}
-      <TopBar title={'My Vault'} theme={'primary'}/>
+      {/* <TopBar title={'My Vault'} theme={'primary'}/> */}
+      {/* <BlankPage /> */}
       {/* <Card
         itemName={"Website/App"}
         theme={"other"}
@@ -23,8 +25,6 @@ export default function App() {
         onPress={() => console.log("click item card!")}
       /> */}
       {/* <IconButton iconSource={'search'} theme={'primary'} onPress={()=>console.log('search button click')}/> */}
-
-      <TabBar />
     </View>
   );
 }

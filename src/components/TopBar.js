@@ -12,21 +12,21 @@ const TopBar = ({ title, onPress, theme }) => {
   if (!loaded) {
     return null;
   }
-  if(theme==='primary'){
-    return(
+  if (theme === "primary") {
+    return (
       <View style={styles.container}>
         <View style={styles.textContainer}>
           <Text style={styles.text}>{title}</Text>
         </View>
         <View style={styles.btnContainer}>
-          <IconButton 
-            iconSource={'search'} 
-            theme={'primary'} 
-            onPress={()=>console.log('search button click')}/>
+          <IconButton
+            iconSource={"search"}
+            theme={"primary"}
+            onPress={() => console.log("search button click")}
+          />
         </View>
-       
       </View>
-    )
+    );
   }
 
   return (
@@ -45,8 +45,8 @@ const TopBar = ({ title, onPress, theme }) => {
 const styles = StyleSheet.create({
   container: {
     position: "fixed",
-    top:0,
-    width:'100%',
+    top: 0,
+    width: "100%",
     height: 40,
     flexDirection: "row",
     marginTop: 56,
@@ -58,17 +58,17 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     zIndex: 1,
   },
-  //search or sort button 
+  //search or sort button
   btnContainer: {
     position: "absolute",
-    alignItems:'center',
-    justifyContent:'center',
+    alignItems: "center",
+    justifyContent: "center",
     // backgroundColor:'red',
-    right:0,
+    right: 0,
     height: "100%",
     paddingHorizontal: 16,
     zIndex: 1,
-  }, 
+  },
   textContainer: {
     alignItems: "center",
     justifyContent: "center",
