@@ -7,15 +7,22 @@ import {FontAwesome, MaterialCommunityIcons}from "react-native-vector-icons";
 const Card = ({theme, itemName, icon, onPress}) => {
     if (theme === 'primary'){
         return (
-            <View style={styles.btnContainer}>
-                <TouchableOpacity onPress={onPress} style={styles.button}>
-                    <View style={styles.logoContainer}>
-                        <MaterialCommunityIcons name={icon} size={24} color="black"/>
-                    </View>
-                       
-                    <Text style={[styles.label, {top: -28}]}>{itemName}</Text>
-                      
-                </TouchableOpacity>
+            <View style={styles.container}> 
+                <View style={styles.btnContainer}>
+                    <TouchableOpacity onPress={onPress} style={styles.button}>
+                        <View style={styles.logoContainer}>
+                            <MaterialCommunityIcons name={icon} size={24} color="black"/>
+                        </View>
+
+                        
+                        
+                        <Text style={[styles.label, {top: -28}]}>{itemName}</Text>
+                        
+                    </TouchableOpacity>
+                </View>
+                <View style={styles.iconContainer}>
+               
+                </View>
             </View>
         )
     };
@@ -72,7 +79,7 @@ const styles = StyleSheet.create({
     },
     iconContainer: {
         justifyContent: 'center',
-       //borderWidth: 2,
+    //    borderWidth: 2,
         position: 'relative',
         zIndex: 2,
         padding: 8,

@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from "react";
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import { useFonts } from "expo-font";
@@ -7,6 +8,16 @@ import BasicButton from "../components/buttons/BasicButton";
 import SocialLoginServices from "../components/SocialLoginServices";
 import { Header, Body, Footer } from "../theme/mainStyle";
 import TabBar from "../components/TabBar";
+=======
+import React from 'react';
+import { StyleSheet, View, Text, Pressable } from 'react-native';
+import {useFonts} from 'expo-font';
+import InputField from '../components/forms/InputField';
+import TopBar from '../components/TopBar';
+import BasicButton from '../components/buttons/BasicButton';
+import SocialLoginServices from '../components/SocialLoginServices';
+
+>>>>>>> origin/HomeScreen
 
 const Login = ({ navigation }) => {
   const [loaded] = useFonts({
