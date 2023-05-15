@@ -49,7 +49,6 @@ const styles = StyleSheet.create({
     width: "100%",
     height: 40,
     flexDirection: "row",
-    marginTop: 56,
     backgroundColor: "rgba(229, 229, 229, 0.6)", //delete
   },
   iconContainer: {

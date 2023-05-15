@@ -13,8 +13,8 @@ export const Header = ({ children }) => {
 export const Body = ({ children }) => {
   return (
     <View style={mainStyles.body}>
-      {children}
-      {/* <ScrollView></ScrollView>
+      <ScrollView>{children}</ScrollView>
+      {/* 
       <FlatList data = {} renderItem={(itemData)=>{
         return(<View></View>)
 
@@ -28,19 +28,17 @@ export const Footer = ({ children }) => {
 
 const mainStyles = StyleSheet.create({
   header: {
-    flex: "1",
-
     borderWidth: 1,
     borderColor: "green",
   },
   body: {
-    flex: "6",
+    flex: 6,
 
     borderWidth: 1,
     borderColor: "red",
   },
   footer: {
-    flex: "1",
+    flex: 1,
 
     borderWidth: 1,
     borderColor: "blue",

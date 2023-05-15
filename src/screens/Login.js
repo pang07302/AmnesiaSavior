@@ -8,7 +8,7 @@ import SocialLoginServices from "../components/SocialLoginServices";
 import { Header, Body, Footer } from "../theme/mainStyle";
 import TabBar from "../components/TabBar";
 
-const Login = () => {
+const Login = ({ navigation }) => {
   const [loaded] = useFonts({
     "Roboto-Light": require("./../../assets/fonts/Roboto-Light.ttf"),
   });
@@ -58,7 +58,7 @@ const Login = () => {
 
         <View style={styles.signUpContainer}>
           <Text style={styles.signUpText}>Don't have an account?</Text>
-          <Pressable onPress={() => console.log("direct to sign up screen")}>
+          <Pressable onPress={() => navigation.navigate("Register")}>
             <Text
               style={[
                 styles.signUpText,
