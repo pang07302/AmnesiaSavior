@@ -5,7 +5,7 @@ import InputField from '../components/forms/InputField';
 import TopBar from '../components/TopBar';
 import BasicButton from '../components/buttons/BasicButton';
 import SocialLoginServices from '../components/SocialLoginServices';
-import { mainStyles } from '../theme/mainStyle';
+
 
 const Login = () => {
     const [loaded] = useFonts({
