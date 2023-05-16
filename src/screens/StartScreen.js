@@ -39,20 +39,26 @@ const StartScreen = ({ navigation }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    //borderWidth: 2,
+    borderWidth: 2,
+    width: '100%',
     borderColor: "blue",
   },
   imageContainer: {
-    flexBasis: "53%",
+    //flexBasis: "55%",
+    height: '68%',
+    justifyContent: 'center',
+    alignItems: 'center',
     paddingTop: 10,
-    //borderWidth: 2,
-    marginTop: 70,
+    borderWidth: 2,
+    borderColor: 'yellow',
+    marginTop: '7%',
   },
   textContainer: {
-    height: 150,
+    height: '12%',
     justifyContent: "center",
     alignItems: "center",
-    //borderWidth: 2,
+    borderWidth: 2,
+    borderColor: 'black'
   },
   title: {
     fontSize: 40,
@@ -64,9 +70,11 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   buttonContainer: {
-    height: 150,
+    height: '20%',
     justifyContent: "center",
     alignItems: "center",
+    borderWidth: 2,
+    borderColor: 'green'
   },
 });
 export default StartScreen;

@@ -6,7 +6,7 @@ import { StyleSheet, View, Image } from 'react-native';
 const ImageViewer = ({imgSource}) => {
     return (
        
-        <Image source={imgSource} style={styles.image}/>
+        <Image source={imgSource} style={styles.image } />
     
 
     )
@@ -15,8 +15,17 @@ const ImageViewer = ({imgSource}) => {
 
 const styles = StyleSheet.create({
     image: {
-        width: 350,
-        height: 450,
+        // maxWidth:'100%',
+        // maxHeight:'100%',
+       
+        height:'100%',
+        width:'auto',
+        aspectRatio: 0.6,
+        resizeMode: 'contain'
+        //objectFit: 'contain',
+        //objectPosition: 3
+       
+        // objectFit:'height'
     }
 
 

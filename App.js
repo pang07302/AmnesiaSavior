@@ -1,43 +1,11 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
-<<<<<<< HEAD
 
 import LoginStack from "./src/routes/LoginStack";
 import * as React from "react";
 
 export default function App() {
   return <LoginStack></LoginStack>;
-=======
-import StartScreen from "./src/screens/StartScreen";
-import Login from "./src/screens/Login";
-import Register from "./src/screens/Register";
-import Card from "./src/components/cards/Card";
-import IconButton from "./src/components/buttons/IconButton";
-import TabBar from "./src/components/TabBar";
-import TopBar from "./src/components/TopBar";
-import HomeScreen from "./src/screens/HomeScreen";
-
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <StatusBar style="auto" />
-      {/* <StartScreen/> */}
-      {/* <Login/> */}
-      {/* <Register/> */}
-      {/* <TopBar title={'My Vault'} theme={'primary'}/> */}
-      {/* <Card
-        itemName={"Website/App"}
-        theme={"other"}
-        icon={"application"}
-        onPress={() => console.log("click item card!")}
-      /> */}
-      {/* <IconButton iconSource={'search'} theme={'primary'} onPress={()=>console.log('search button click')}/> */}
-
-      {/* <TabBar /> */}
-      <HomeScreen/>
-    </View>
-  );
->>>>>>> origin/HomeScreen
 }
 
 const styles = StyleSheet.create({
