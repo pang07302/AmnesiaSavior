@@ -21,7 +21,7 @@ const Login = ({ navigation }) => {
     <View style={styles.container}>
       {/* ----------------Header------------------- */}
       <Header>
-        <TopBar title={"Log in"} onPress={() => console.log("back")} />
+        {/* <TopBar title={"Log in"} onPress={() => console.log("back")} /> */}
       </Header>
 
       {/* ----------------Middle------------------- */}
