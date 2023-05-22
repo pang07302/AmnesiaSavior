@@ -3,32 +3,20 @@ import { StyleSheet, View, Image } from 'react-native';
 
 
 
-const ImageViewer = ({imgSource}) => {
+const ImageViewer = ({imgSource, ratio}) => {
     return (
        
-        <Image source={imgSource} style={styles.image } />
+        <Image source={imgSource} style={[styles.image, {aspectRatio: ratio,} ]} />
     
-
     )
-
 };
 
 const styles = StyleSheet.create({
     image: {
-        // maxWidth:'100%',
-        // maxHeight:'100%',
-       
         height:'100%',
         width:'auto',
-        aspectRatio: 0.6,
         resizeMode: 'contain'
-        //objectFit: 'contain',
-        //objectPosition: 3
-       
-        // objectFit:'height'
     }
-
-
 });
 
 export default ImageViewer;

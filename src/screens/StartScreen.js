@@ -19,7 +19,7 @@ const StartScreen = ({ navigation }) => {
   return (
     <View style={styles.container}>
       <View style={styles.imageContainer}>
-        <ImageViewer imgSource={PlaceholderImage} />
+        <ImageViewer imgSource={PlaceholderImage} ratio={0.6}/>
       </View>
       <View style={styles.textContainer}>
         <Text style={styles.title}>Small Vault</Text>
