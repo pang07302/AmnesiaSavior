@@ -3,7 +3,6 @@ import { StyleSheet, View, Text } from "react-native";
 import { useFonts } from "expo-font";
 import ImageViewer from "../components/ImageViewer";
 import RoundButton from "../components/buttons/BasicButton";
-import { NavigationContainer } from "@react-navigation/native";
 
 const PlaceholderImage = require("./../assets/starting_image.png");
 
@@ -40,21 +39,21 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     //borderWidth: 2,
-    width: '100%',
+    width: "100%",
     //borderColor: "blue",
   },
   imageContainer: {
     //flexBasis: "55%",
-    height: '56%',
-    justifyContent: 'center',
-    alignItems: 'center',
+    height: "56%",
+    justifyContent: "center",
+    alignItems: "center",
     paddingTop: 10,
     // borderWidth: 2,
     // borderColor: 'yellow',
-    marginTop: '7%',
+    marginTop: "7%",
   },
   textContainer: {
-    height: '16%',
+    height: "16%",
     justifyContent: "center",
     alignItems: "center",
     // borderWidth: 2,
@@ -70,7 +69,7 @@ const styles = StyleSheet.create({
     marginTop: 10,
   },
   buttonContainer: {
-    height: '10%',
+    height: "10%",
     justifyContent: "center",
     alignItems: "center",
     // borderWidth: 2,

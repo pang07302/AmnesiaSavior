@@ -26,8 +26,12 @@ function LoginStack() {
           name="Login"
           component={Login}
           options={{
+            title: "Login",
             // headerTintColor: "",
             headerStyle: { backgroundColor: "#E5E5E5" },
+            headerTitleStyle: {
+              fontSize: 24,
+            },
           }}
         />
         <Stack.Screen name="Register" component={Register} />

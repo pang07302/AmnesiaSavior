@@ -30,6 +30,7 @@ const mainStyles = StyleSheet.create({
   header: {
     borderWidth: 1,
     borderColor: "green",
+    backgroundColor: "red",
   },
   body: {
     flex: 6,

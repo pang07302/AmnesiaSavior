@@ -8,7 +8,6 @@ import SocialLoginServices from "../components/SocialLoginServices";
 import { Header, Body, Footer } from "../theme/mainStyle";
 import TabBar from "../components/TabBar";
 
-
 const Login = ({ navigation }) => {
   const [loaded] = useFonts({
     "Roboto-Light": require("./../../assets/fonts/Roboto-Light.ttf"),
