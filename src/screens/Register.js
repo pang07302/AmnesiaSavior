@@ -6,7 +6,7 @@ import InputField from "../components/forms/InputField";
 import BasicButton from "../components/buttons/BasicButton";
 import SocialLoginServices from "../components/SocialLoginServices";
 
-const Register = () => {
+const Register = ({ navigation }) => {
   return (
     <View style={styles.container}>
       {/* <TopBar 
