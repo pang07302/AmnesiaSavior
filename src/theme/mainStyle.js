@@ -34,14 +34,15 @@ const mainStyles = StyleSheet.create({
   },
   body: {
     flex: 6,
+    width:'100%',
 
-    borderWidth: 1,
-    borderColor: "red",
+    // borderWidth: 1,
+    // borderColor: "red",
   },
   footer: {
     flex: 1,
-
-    borderWidth: 1,
-    borderColor: "blue",
+    width:'100%',
+    // borderWidth: 1,
+    // borderColor: "blue",
   },
 });

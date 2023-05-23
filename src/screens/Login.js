@@ -7,6 +7,7 @@ import BasicButton from "../components/buttons/BasicButton";
 import SocialLoginServices from "../components/SocialLoginServices";
 import { Header, Body, Footer } from "../theme/mainStyle";
 import TabBar from "../components/TabBar";
+import Reminder from "../components/Reminder";
 
 const Login = ({ navigation }) => {
   const [loaded] = useFonts({
@@ -45,7 +46,7 @@ const Login = ({ navigation }) => {
             placeholder={"Enter your password"}
           />
           <View style={{ width: 360 }}>
-            <Pressable onPress={() => console.log("forget password")}>
+            <Pressable onPress={() => navigation.navigate("Forget Password")}>
               <Text style={styles.forgetPwdTxt}>Forget password?</Text>
             </Pressable>
           </View>
@@ -56,26 +57,14 @@ const Login = ({ navigation }) => {
           <SocialLoginServices />
         </View>
 
-        <View style={styles.signUpContainer}>
-          <Text style={styles.signUpText}>Don't have an account?</Text>
-          <Pressable onPress={() => navigation.navigate("Register")}>
-            <Text
-              style={[
-                styles.signUpText,
-                { color: "black", fontWeight: "bold" },
-              ]}
-            >
-              {" "}
-              Sign up
-            </Text>
-          </Pressable>
-        </View>
+ 
+        <Reminder
+          text={"Don't have an account?"}
+          onPress={() => navigation.navigate("Register")}
+          linkTxt={'Sign up'}
+          />
       </Body>
 
-      {/* ---------------Footer--------------------    */}
-      <Footer>
-        <TabBar />
-      </Footer>
     </View>
   );
 };

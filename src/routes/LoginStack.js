@@ -5,8 +5,13 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Login from "../screens/Login";
 import Register from "../screens/Register";
 import StartScreen from "../screens/StartScreen";
+<<<<<<< HEAD
 import { StyleSheet, Pressable } from "react-native";
 import CustomBackButton from "../components/buttons/CustomBackButton";
+=======
+import ForgetPassword from "../screens/ForgetPassword";
+import ResetPassword from "../screens/ResetPassword";
+>>>>>>> origin/PasswordScreen
 
 const Stack = createNativeStackNavigator();
 
@@ -47,6 +52,20 @@ function LoginStack() {
             ),
           })}
         />
+<<<<<<< HEAD
+=======
+        <Stack.Screen name="Register" component={Register} />
+        <Stack.Screen name="Forget Password" component={ForgetPassword} />
+        <Stack.Screen 
+          name="Reset Password" 
+          component={ResetPassword} 
+          options={{
+          // headerTintColor: "",
+          headerStyle: { backgroundColor: "#E5E5E5" },
+        }}
+        
+        />
+>>>>>>> origin/PasswordScreen
         {/* <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="Settings" component={Settings} /> */}
       </Stack.Navigator>

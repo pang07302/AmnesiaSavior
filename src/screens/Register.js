@@ -5,6 +5,8 @@ import TopBar from "../components/TopBar";
 import InputField from "../components/forms/InputField";
 import BasicButton from "../components/buttons/BasicButton";
 import SocialLoginServices from "../components/SocialLoginServices";
+import { Body } from "../theme/mainStyle";
+import Reminder from "../components/Reminder";
 
 const Register = ({ navigation }) => {
   return (
@@ -14,51 +16,40 @@ const Register = ({ navigation }) => {
             onPress={() => console.log('back to starting screen')}/> */}
 
       {/* -----------Middle-------- */}
-      <View style={styles.inputFieldContainer}>
-        <InputField
-          label={"Your Email"}
-          onChangeText={() => console.log("email changed")}
-          placeholder={"Enter your email"}
-          keyboardType={"email-address"}
-        />
+      <Body>
+        <View style={styles.inputFieldContainer}>
+          <InputField
+            label={"Your Email"}
+            onChangeText={() => console.log("email changed")}
+            placeholder={"Enter your email"}
+            keyboardType={"email-address"}
+          />
 
-        <InputField
-          label={"Create Password"}
-          onChangeText={() => console.log("create password")}
-          placeholder={"Enter your password"}
-        />
+          <InputField
+            label={"Create Password"}
+            onChangeText={() => console.log("create password")}
+            placeholder={"Enter your password"}
+          />
 
-        <InputField
-          label={"Confirm Password"}
-          onChangeText={() => console.log("Confirm password")}
-          placeholder={"Confirm your password"}
-        />
-      </View>
-
-      {/* ---------------Footer---------------- */}
-      <View style={styles.footerContainer}>
-        <BasicButton
-          label={"Register"}
-          onPress={() => console.log("direct to main screen")}
-        />
-        <SocialLoginServices />
-
-        <View style={styles.textContainer}>
-          {/* ---this section might be improved---- */}
-          <Text style={styles.footerText}>Already have an account?</Text>
-          <Pressable onPress={() => console.log("direct to sign up screen")}>
-            <Text
-              style={[
-                styles.footerText,
-                { color: "black", fontWeight: "bold" },
-              ]}
-            >
-              {" "}
-              Sign in
-            </Text>
-          </Pressable>
+          <InputField
+            label={"Confirm Password"}
+            onChangeText={() => console.log("Confirm password")}
+            placeholder={"Confirm your password"}
+          />
         </View>
-      </View>
+     
+        <View style={styles.footerContainer}>
+          <BasicButton
+            label={"Register"}
+            onPress={() => console.log("direct to main screen")}
+          />
+          <SocialLoginServices />
+        </View>
+        <Reminder
+          text={"Already have an account?"}
+          onPress={() => navigation.navigate("Login")}
+          linkTxt={'Sign in'}/>
+      </Body>
     </View>
   );
 };
