@@ -2,6 +2,8 @@ import React from 'react';
 import { StyleSheet, View, Text, Pressable, ScrollView, FlatList, SafeAreaView } from 'react-native';
 import TabBar from '../components/TabBar';
 import Card from '../components/cards/Card';
+import SearchBar from '../components/SearchBar';
+import { Body, Footer } from '../theme/mainStyle';
 
 
 const HomeScreen = () => {
@@ -44,9 +46,23 @@ const HomeScreen = () => {
           },
       ];
     return (
-        <SafeAreaView style={styles.container}>
-            <Text>My Vault</Text>
-            <ScrollView style={styles.bodyContainer}>
+        <View style={styles.container}>
+            <View style={styles.textContainer}>
+                <Text 
+                    style={{fontSize: 36, fontWeight: 'bold', paddingLeft: '5%'}}
+                >
+                    My Vault
+                </Text>
+            </View>
+            <View>
+                <SearchBar/>
+            </View>
+            
+            
+            <Body>
+
+            </Body>
+            {/* <ScrollView style={styles.bodyContainer}>
                 {
                     CATEGORY.map((item, index) => {
                         return (
@@ -64,10 +80,13 @@ const HomeScreen = () => {
                     })
                 }
 
-            </ScrollView>
-            <TabBar/>
+            </ScrollView> */}
+            <Footer>    
+                <TabBar/>
+            </Footer>
+            
 
-        </SafeAreaView>
+        </View>
         
 
     );
@@ -77,6 +96,14 @@ const styles = StyleSheet.create({
     container: {
         width: '100%',
         flex: 1
+    },
+    textContainer: {
+        // borderWidth: 2,
+        height: '20%',
+        justifyContent: 'center',
+        backgroundColor: '#ffd94d',
+        position: 'relative'
+
     },
     bodyContainer: {
         flex: 1
