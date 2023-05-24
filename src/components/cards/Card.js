@@ -15,8 +15,9 @@ const Card = ({theme, itemName, icon, onPress}) => {
                         </View>
 
                         
-                        
-                        <Text style={[styles.label, {top: -28}]}>{itemName}</Text>
+                       
+                        <Text style={styles.label}>{itemName}</Text>
+               
                         
                     </TouchableOpacity>
                 </View>
@@ -46,30 +47,34 @@ const Card = ({theme, itemName, icon, onPress}) => {
 
 const styles = StyleSheet.create({
     container:{
+        flex:1,
         justifyContent: 'center',
         flexDirection: 'row',
-        //backgroundColor: 'black',
         width:'100%',
-        //paddingHorizontal: 8,
-        //marginTop: 32,
+        borderWidth:'3',
+        borderColor:'green'
     },
     btnContainer: {
-        width: 370,
+        width: '85%',
+        height: '100%',
         //flexDirection: 'row',
-        paddingHorizontal: 8,
+        paddingHorizontal: 2,
         justifyContent: 'flex-start',
-        //borderColor: 'green',
-        //borderWidth: 2,
-        position: 'absolute',
+        borderWidth: 2,
+        borderColor: 'blue',
+    
         zIndex: 1,
     },
     button: {
+        flexDirection:'row',
         alignItems: 'center',
-        justifyContent: 'center',
         borderRadius: 12,
-        padding: 8,
-        height: 56,
-        backgroundColor: '#f2f3f4',
+        marginVertical:'2%',
+        // padding: 8,
+        // height: '40%',
+        backgroundColor: 'white',
+        borderColor: 'black',
+        borderWidth:2,
         // might be changed as it does not work with android 
         shadowColor: '#171717',
         shadowOffset: {width: -2, height: 4},
@@ -83,25 +88,19 @@ const styles = StyleSheet.create({
         position: 'relative',
         zIndex: 2,
         padding: 8,
-        height: 60,
-        left: 160
+        height: 10,
+        left: 160,
+       
     },
     logoContainer: {
         justifyContent: 'center',
-        //alignItems: 'flex-start',
-        borderWidth: 2,
         position: 'relative',
         zIndex: 2,
         padding: 16,
-        height: 60,
-        right: 145,
-        top: 18
     }, 
 
     label: {
-        fontSize: 28,
-        //fontFamily: 'Roboto-Medium'
-
+        fontSize: 60,
     }
 
 

@@ -3,7 +3,7 @@ import { StyleSheet, View, Text, Pressable, ScrollView, FlatList, SafeAreaView }
 import TabBar from '../components/TabBar';
 import Card from '../components/cards/Card';
 import SearchBar from '../components/SearchBar';
-import { Body, Footer } from '../theme/mainStyle';
+import { Header, Body, Footer } from '../theme/mainStyle';
 
 
 const HomeScreen = () => {
@@ -47,43 +47,51 @@ const HomeScreen = () => {
       ];
     return (
         <View style={styles.container}>
-            <View style={styles.textContainer}>
-                <Text 
-                    style={{fontSize: 36, fontWeight: 'bold', paddingLeft: '5%'}}
-                >
-                    My Vault
-                </Text>
-            </View>
-            <View>
-                <SearchBar/>
-            </View>
+            <Header>
+                <View style={styles.textContainer}>
+                    <View style={{borderWidth: 2, position: 'relative', top: '30%'}}>
+                        <Text 
+                            style={{fontSize: 36, fontWeight: 'bold', paddingLeft: '5%'}}
+                        >
+                            My Vault
+                        </Text>
+                    </View>
+                    
+                </View>
+                <View style={styles.SearchBarContainer}>
+                    <SearchBar/>
+                </View>
+            </Header>
             
             
             <Body>
-
+            
+                <ScrollView style={styles.bodyContainer}>
+                    {
+                        CATEGORY.map((item, index) => {
+                            return (
+                                <Card 
+                                    key={item.id}
+                                    theme='primary'
+                                    itemName={item.name}
+                                    icon={item.icon}
+                                    onPress={()=>console.log('click category card')}
+                                />
+                            )
+                            
+                        })
+                    }
+                </ScrollView>
+                {/* <View style={{width:'100%',height:200, zIndex:1,position:"fixed" ,bottom:20}}> */}
+                    
+                {/* </View> */}
+         
             </Body>
-            {/* <ScrollView style={styles.bodyContainer}>
-                {
-                    CATEGORY.map((item, index) => {
-                        return (
-                        //<View key={index}>
-                            <Card 
-                                key={item.id}
-                                theme='primary'
-                                itemName={item.name}
-                                icon={item.icon}
-                                onPress={()=>console.log('click category card')}
-                            />
-                        //</View>
-                        )
-                        
-                    })
-                }
-
-            </ScrollView> */}
-            <Footer>    
-                <TabBar/>
-            </Footer>
+                
+             <Footer>    
+              <TabBar/>
+            </Footer> 
+            
             
 
         </View>
@@ -94,19 +102,44 @@ const HomeScreen = () => {
 
 const styles = StyleSheet.create({
     container: {
+  
         width: '100%',
+        height: '100%',
+        alignItems: 'center',
+        justifyContent: 'center',
         flex: 1
     },
     textContainer: {
-        // borderWidth: 2,
-        height: '20%',
+        borderWidth: 2,
+        flex:1,
+        width: '100%',
         justifyContent: 'center',
+        //alignItems: 'baseline',
         backgroundColor: '#ffd94d',
-        position: 'relative'
+        position: 'relative',
+        zIndex: 0
 
     },
+    SearchBarContainer: {
+        borderWidth: 2,
+        borderColor: 'red',
+        width: '95%',
+        justifyContent: 'center',
+        alignItems: 'center',
+        position: 'absolute',
+        top: '13%',
+        zIndex: 3
+    },
     bodyContainer: {
-        flex: 1
+
+        padding:16,
+        borderWidth: 2,
+        borderColor: 'red',
+        width: '100%',
+        paddingBottom:'16%'
+        // height: '30%'
+      
+        
     }
 
 })

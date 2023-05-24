@@ -27,15 +27,19 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         // justifyContent: 'space-evenly',
         padding: 8,
-        marginTop: '10%',
+        backgroundColor: 'white',
         borderRadius: 32,
-        borderWidth:2,
-        borderColor: 'blue'
+        borderWidth:1,
+        borderColor: 'white',
+        shadowColor: '#171717',
+        shadowOffset: {width: -2, height: 4},
+        shadowOpacity: 0.2,
+        shadowRadius: 3,
     },
     input: {
         fontSize:20,
         width: '85%',
-       marginRight: '5%'
+        marginRight: '5%'
 
     },
 

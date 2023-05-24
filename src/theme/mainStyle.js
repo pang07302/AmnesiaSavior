@@ -28,21 +28,34 @@ export const Footer = ({ children }) => {
 
 const mainStyles = StyleSheet.create({
   header: {
+    // flex:2,
+    top:0,
+    position:'relative',
+    height:'12.5%',
+    width:'100%',
     borderWidth: 1,
     borderColor: "green",
     backgroundColor: "red",
   },
   body: {
-    flex: 6,
+    // flex: 7,
+    top:'12.5%',
+    height:'75%',
     width:'100%',
+    position:'relative',
 
-    // borderWidth: 1,
-    // borderColor: "red",
+
+    borderWidth: 10,
+    borderColor: "black",
   },
   footer: {
-    flex: 1,
+    // flex: 1,
+    position:'relative',
+    height:'12.5%',
     width:'100%',
-    // borderWidth: 1,
-    // borderColor: "blue",
+    bottom:0,
+    borderWidth: 1,
+    borderColor: "blue",
+
   },
 });

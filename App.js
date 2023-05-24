@@ -9,8 +9,8 @@ import Profile from "./src/screens/Profile";
 import HomeScreen from "./src/screens/HomeScreen";
 
 export default function App() {
-  return <LoginStack></LoginStack>;
-  // return <HomeScreen></HomeScreen>
+  // return <LoginStack></LoginStack>;
+  return <HomeScreen></HomeScreen>
 }
 
 const styles = StyleSheet.create({

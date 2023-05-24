@@ -49,13 +49,15 @@ const TabBar = () => {
 
 const styles = StyleSheet.create({
   container: {
-    height: "64%",
+    height: "100%",
     bottom: 0,
     paddingBottom: 8,
-    backgroundColor: "rgba(229, 229, 229, 0.6)", //#E5E5E5
+    backgroundColor: "rgba(229, 229, 229, 1)", //#E5E5E5
     alignItems: "flex-end",
     flexDirection: "row",
     position: "absolute",
+    zIndex:1
+
   },
   tabContainer: {
     flexDirection: "row",
