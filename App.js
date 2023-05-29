@@ -7,10 +7,11 @@ import ResetPassword from "./src/screens/ResetPassword";
 import SubmittedScreen from "./src/screens/SubmittedScreen";
 import Profile from "./src/screens/Profile";
 import HomeScreen from "./src/screens/HomeScreen";
+import CreateVault from "./src/screens/CreateVault";
 
 export default function App() {
   // return <LoginStack></LoginStack>;
-  return <HomeScreen></HomeScreen>
+  return <CreateVault/>
 }
 
 const styles = StyleSheet.create({
