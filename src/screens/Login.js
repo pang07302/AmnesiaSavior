@@ -2,14 +2,15 @@ import React from "react";
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import { useFonts } from "expo-font";
 import InputField from "../components/forms/InputField";
-import TopBar from "../components/TopBar";
 import BasicButton from "../components/buttons/BasicButton";
 import SocialLoginServices from "../components/SocialLoginServices";
-import { Header, Body, Footer } from "../theme/mainStyle";
-import TabBar from "../components/TabBar";
+import { Body } from "../theme/mainStyle";
 import Reminder from "../components/Reminder";
 
+import { useLoginContext } from "../context/LoginProvider";
+
 const Login = ({ navigation }) => {
+  const { isLogged, setIsLogged } = useLoginContext();
   const [loaded] = useFonts({
     "Roboto-Light": require("./../../assets/fonts/Roboto-Light.ttf"),
   });
@@ -19,12 +20,6 @@ const Login = ({ navigation }) => {
   }
   return (
     <View style={styles.container}>
-      {/* ----------------Header------------------- */}
-      <Header>
-        {/* <TopBar title={"Log in"} onPress={() => console.log("back")} /> */}
-      </Header>
-
-      {/* ----------------Middle------------------- */}
       <Body>
         <View
           style={{
@@ -53,18 +48,19 @@ const Login = ({ navigation }) => {
         </View>
 
         <View style={styles.buttonContainer}>
-          <BasicButton label={"Log in"} onPress={() => console.log("Log in")} />
+          <BasicButton
+            label={"Log in"}
+            onPress={() => setIsLogged((isLogged) => (isLogged = true))}
+          />
           <SocialLoginServices />
         </View>
 
- 
         <Reminder
           text={"Don't have an account?"}
           onPress={() => navigation.navigate("Register")}
-          linkTxt={'Sign up'}
-          />
+          linkTxt={"Sign up"}
+        />
       </Body>
-
     </View>
   );
 };

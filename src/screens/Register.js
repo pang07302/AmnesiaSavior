@@ -11,11 +11,6 @@ import Reminder from "../components/Reminder";
 const Register = ({ navigation }) => {
   return (
     <View style={styles.container}>
-      {/* <TopBar 
-            title={'Create New Account'} 
-            onPress={() => console.log('back to starting screen')}/> */}
-
-      {/* -----------Middle-------- */}
       <Body>
         <View style={styles.inputFieldContainer}>
           <InputField
@@ -37,7 +32,7 @@ const Register = ({ navigation }) => {
             placeholder={"Confirm your password"}
           />
         </View>
-     
+
         <View style={styles.footerContainer}>
           <BasicButton
             label={"Register"}
@@ -48,7 +43,8 @@ const Register = ({ navigation }) => {
         <Reminder
           text={"Already have an account?"}
           onPress={() => navigation.navigate("Login")}
-          linkTxt={'Sign in'}/>
+          linkTxt={"Sign in"}
+        />
       </Body>
     </View>
   );
@@ -58,20 +54,15 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: "100%",
-    //borderWidth: 3
   },
   inputFieldContainer: {
     alignItems: "center",
     justifyContent: "center",
-    height: 400,
-    // borderWidth: 2,
-    // borderColor: 'green'
+    height: "50%",
   },
   footerContainer: {
     alignItems: "center",
     justifyContent: "center",
-    // borderColor: 'purple',
-    // borderWidth: 3,
     height: 300,
   },
   textContainer: {
@@ -79,8 +70,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
     marginTop: 32,
-    // borderColor: 'yellow',
-    // borderWidth: 3
   },
   footerText: {
     fontSize: 20,

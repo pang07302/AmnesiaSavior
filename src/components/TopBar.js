@@ -1,42 +1,144 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import FontAwesome from "react-native-vector-icons/FontAwesome";
 import { useFonts } from "expo-font";
-import IconButton from "./buttons/IconButton";
+import SearchBar from "./SearchBar";
 
-const TopBar = ({ title, onPress, theme }) => {
+const TopBar = ({ title, leftButton, theme }) => {
   const [loaded] = useFonts({
     "Roboto-Medium": require("./../../assets/fonts/Roboto-Medium.ttf"),
   });
+  const [displaySearchBar, setDisplaySearchBar] = useState(false);
+  const [edit, setEdit] = useState(false);
 
   if (!loaded) {
     return null;
   }
-  if (theme === "primary") {
-    return (
-      <View style={styles.container}>
-        <View style={styles.textContainer}>
-          <Text style={styles.text}>{title}</Text>
-        </View>
-        <View style={styles.btnContainer}>
-          <IconButton
-            iconSource={"search"}
-            theme={"primary"}
-            onPress={() => console.log("search button click")}
-          />
-        </View>
-      </View>
-    );
-  }
 
+  switch (theme) {
+    case "login":
+      return renderLogin(title, leftButton);
+    case "primary":
+      return renderPrimary(title);
+    case "vault":
+      return renderVault(
+        title,
+        leftButton,
+        displaySearchBar,
+        setDisplaySearchBar
+      );
+    case "record":
+      return renderRecord(title, leftButton, edit, setEdit);
+    default:
+      return renderPrimary(title);
+  }
+};
+
+const renderLogin = (title, leftButton) => {
   return (
     <View style={styles.container}>
-      <Pressable onPress={onPress} style={styles.iconContainer}>
-        <FontAwesome name="angle-left" size={36} color="black" />
-      </Pressable>
+      <View style={styles.upperContainer}>
+        {/* title */}
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>{title}</Text>
+        </View>
 
-      <View style={styles.textContainer}>
-        <Text style={styles.text}>{title}</Text>
+        {/* left button */}
+        <View style={styles.leftButtonContainer}>
+          <Pressable onPress={leftButton} style={styles.button}>
+            <FontAwesome name="angle-left" size={36} color="black" />
+          </Pressable>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+const renderPrimary = (title) => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.upperContainer}>
+        {/* title */}
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>{title}</Text>
+        </View>
+      </View>
+    </View>
+  );
+};
+
+const renderVault = (
+  title,
+  leftButton,
+  displaySearchBar,
+  setDisplaySearchBar
+) => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.upperContainer}>
+        {/* title */}
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>{title}</Text>
+        </View>
+
+        {/* left button */}
+        <View style={styles.leftButtonContainer}>
+          <Pressable onPress={leftButton} style={styles.button}>
+            <FontAwesome name="angle-left" size={36} color="black" />
+          </Pressable>
+        </View>
+
+        {/* right button */}
+        <View style={styles.rightButtonContainer}>
+          <Pressable
+            style={styles.button}
+            onPress={() => setDisplaySearchBar((search) => (search = !search))}
+          >
+            {displaySearchBar === true ? (
+              <Text>Cancel</Text>
+            ) : (
+              <FontAwesome name="search" size={28} color="black" />
+            )}
+          </Pressable>
+        </View>
+      </View>
+
+      <View style={styles.searchBarContainer}>
+        {displaySearchBar === true ? <SearchBar /> : <></>}
+      </View>
+    </View>
+  );
+};
+
+const renderRecord = (title, leftButton) => {
+  return (
+    <View style={styles.container}>
+      <View style={styles.upperContainer}>
+        {/* title */}
+        <View style={styles.titleContainer}>
+          <Text style={styles.title}>{title}</Text>
+        </View>
+
+        {/* left button */}
+        <View style={styles.leftButtonContainer}>
+          <Pressable onPress={leftButton} style={styles.button}>
+            <FontAwesome name="angle-left" size={36} color="black" />
+          </Pressable>
+        </View>
+
+        {/* right button */}
+        <View style={styles.rightButtonContainer}>
+          <Pressable
+            style={styles.button}
+            onPress={() => setEdit((edit) => (edit = !edit))}
+          >
+            {displaySearchBar === true ? (
+              <Text>Cancel</Text>
+            ) : (
+              <Text>Edit</Text>
+            )}
+          </Pressable>
+        </View>
       </View>
     </View>
   );
@@ -44,38 +146,56 @@ const TopBar = ({ title, onPress, theme }) => {
 
 const styles = StyleSheet.create({
   container: {
-    position: "fixed",
-    top: 0,
-    width: "100%",
-    height: 40,
-    flexDirection: "row",
-    backgroundColor: "rgba(229, 229, 229, 0.6)", //delete
-  },
-  iconContainer: {
-    position: "absolute",
-    height: "100%",
-    paddingHorizontal: 16,
-    zIndex: 1,
-  },
-  //search or sort button
-  btnContainer: {
-    position: "absolute",
     alignItems: "center",
-    justifyContent: "center",
-    // backgroundColor:'red',
-    right: 0,
-    height: "100%",
-    paddingHorizontal: 16,
-    zIndex: 1,
+    backgroundColor: "#ffd94d",
+    paddingTop: "8%",
+    borderWidth: 5,
+
+    height: 160,
   },
-  textContainer: {
+  upperContainer: {
+    width: "100%",
+    flexDirection: "row",
+    height: "60%",
+  },
+  searchBarContainer: {
+    width: "100%",
+    height: "40%",
+    alignItems: "center",
+  },
+
+  titleContainer: {
+    width: "100%",
     alignItems: "center",
     justifyContent: "center",
     flexGrow: 1,
   },
-  text: {
+  title: {
     fontSize: 24,
     fontFamily: "Roboto-Medium",
+  },
+
+  leftButtonContainer: {
+    position: "absolute",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 16,
+  },
+  rightButtonContainer: {
+    position: "absolute",
+    height: "100%",
+    justifyContent: "center",
+    alignItems: "center",
+    paddingHorizontal: 16,
+    right: 0,
+  },
+  button: {
+    // borderWidth: 1,
+    alignItems: "center",
+    justifyContent: "center",
+    width: 50,
+    height: 50,
   },
 });
 
