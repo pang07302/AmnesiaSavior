@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import { Login, Register, ForgetPassword, StartScreen } from "../screens";
 
 import TopBar from "../components/TopBar";
+import NewVault from "../screens/NewVault";
 
 const Stack = createNativeStackNavigator();
 

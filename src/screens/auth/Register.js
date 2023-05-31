@@ -35,7 +35,7 @@ const Register = ({ navigation }) => {
         <View style={styles.footerContainer}>
           <BasicButton
             label={"Register"}
-            onPress={() => console.log("direct to main screen")}
+            onPress={() => navigation.navigate('Create')}
           />
           <SocialLoginServices />
         </View>

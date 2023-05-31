@@ -3,7 +3,9 @@ import { StyleSheet, View, ScrollView } from "react-native";
 export const Body = ({ children }) => {
   return (
     <View style={mainStyles.body}>
-      <ScrollView>{children}</ScrollView>
+      <ScrollView style={{ marginBottom: "1%", height: "100%" }}>
+        {children}
+      </ScrollView>
     </View>
   );
 };
