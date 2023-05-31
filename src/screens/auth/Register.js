@@ -1,12 +1,11 @@
 import React from "react";
 import { StyleSheet, View, Text, Pressable } from "react-native";
-import { useFonts } from "expo-font";
-import TopBar from "../components/TopBar";
-import InputField from "../components/forms/InputField";
-import BasicButton from "../components/buttons/BasicButton";
-import SocialLoginServices from "../components/SocialLoginServices";
-import { Body } from "../theme/mainStyle";
-import Reminder from "../components/Reminder";
+
+import InputField from "../../components/forms/InputField";
+import BasicButton from "../../components/buttons/BasicButton";
+import SocialLoginServices from "../../components/SocialLoginServices";
+import { Body } from "../../theme/mainStyle";
+import Reminder from "../../components/Reminder";
 
 const Register = ({ navigation }) => {
   return (

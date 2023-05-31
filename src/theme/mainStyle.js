@@ -1,15 +1,5 @@
-import {
-  StyleSheet,
-  View,
-  ScrollView,
-  FlatList,
-  Text,
-  Pressable,
-} from "react-native";
+import { StyleSheet, View, ScrollView } from "react-native";
 
-export const Header = ({ children }) => {
-  return <View style={mainStyles.header}>{children}</View>;
-};
 export const Body = ({ children }) => {
   return (
     <View style={mainStyles.body}>
@@ -28,19 +18,21 @@ const mainStyles = StyleSheet.create({
     height: "100%",
     width: "100%",
     // position: "absolute",
-
+    backgroundColor: "#FFFFFF",
     borderWidth: 10,
     borderColor: "black",
   },
   footer: {
-    // flex: 1,
     position: "absolute",
-    height: "12.5%",
+    height: "10%",
     width: "100%",
     bottom: 0,
-    borderWidth: 3,
-    borderColor: "blue",
-    backgroundColor: "pink",
+    paddingBottom: "4%",
+    backgroundColor: "rgba(229, 229, 229, 1)",
+    alignItems: "flex-end",
+    flexDirection: "row",
     zIndex: 1,
+
+    borderWidth: 3,
   },
 });

@@ -4,7 +4,7 @@ import { StyleSheet, Pressable } from "react-native";
 
 const AddButton = ({ iconSource, onPress }) => {
   return (
-    <Pressable style={styles.button}>
+    <Pressable style={styles.button} onPress={onPress}>
       <FontAwesome name={iconSource} size={40} color="white" />
     </Pressable>
   );

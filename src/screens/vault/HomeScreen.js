@@ -1,17 +1,8 @@
 import React from "react";
-import {
-  StyleSheet,
-  View,
-  Text,
-  Pressable,
-  ScrollView,
-  FlatList,
-  SafeAreaView,
-} from "react-native";
-import TabBar from "../components/TabBar";
-import Card from "../components/cards/Card";
-import SearchBar from "../components/SearchBar";
-import { Header, Body, Footer } from "../theme/mainStyle";
+import { StyleSheet, View, ScrollView } from "react-native";
+import Card from "../../components/cards/Card";
+import SearchBar from "../../components/SearchBar";
+import { Body } from "../../theme/mainStyle";
 
 const HomeScreen = ({ navigation }) => {
   const CATEGORY = [
@@ -86,10 +77,6 @@ const HomeScreen = ({ navigation }) => {
 
         {/* </View> */}
       </Body>
-
-      <Footer>
-        <TabBar />
-      </Footer>
     </View>
   );
 };

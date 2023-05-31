@@ -5,10 +5,10 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 // import LoginProvider from "./src/components/context/LoginProvider";
 import LoginStack from "./src/routes/LoginStack";
 import * as React from "react";
-import ResetPassword from "./src/screens/ResetPassword";
+import ResetPassword from "./src/screens/profile/ResetPassword";
 import SubmittedScreen from "./src/screens/SubmittedScreen";
-import Profile from "./src/screens/Profile";
-import HomeScreen from "./src/screens/HomeScreen";
+import Profile from "./src/screens/profile/Profile";
+import HomeScreen from "./src/screens/vault/HomeScreen";
 import { useLoginContext } from "./src/context/LoginProvider";
 
 import AppProvider from "./src/context/AppProvider";

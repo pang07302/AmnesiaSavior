@@ -1,18 +1,18 @@
 import React from "react";
 import { StyleSheet, View, Text, Pressable } from "react-native";
 import { useFonts } from "expo-font";
-import InputField from "../components/forms/InputField";
-import BasicButton from "../components/buttons/BasicButton";
-import SocialLoginServices from "../components/SocialLoginServices";
-import { Body } from "../theme/mainStyle";
-import Reminder from "../components/Reminder";
+import InputField from "../../components/forms/InputField";
+import BasicButton from "../../components/buttons/BasicButton";
+import SocialLoginServices from "../../components/SocialLoginServices";
+import { Body } from "../../theme/mainStyle";
+import Reminder from "../../components/Reminder";
 
-import { useLoginContext } from "../context/LoginProvider";
+import { useLoginContext } from "../../context/LoginProvider";
 
 const Login = ({ navigation }) => {
   const { isLogged, setIsLogged } = useLoginContext();
   const [loaded] = useFonts({
-    "Roboto-Light": require("./../../assets/fonts/Roboto-Light.ttf"),
+    "Roboto-Light": require("../../../assets/fonts/Roboto-Light.ttf"),
   });
 
   if (!loaded) {

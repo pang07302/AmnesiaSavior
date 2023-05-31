@@ -2,65 +2,35 @@ import { Pressable, View, StyleSheet } from "react-native";
 import TabButton from "./buttons/TabButton";
 import AddButton from "./buttons/AddButton";
 
-const TabBar = () => {
+const TabBar = ({ state, descriptors, navigation }) => {
   return (
     <View style={styles.container}>
-      <View style={styles.tabContainer}>
-        <View>
-          <TabButton
-            iconSource={"home"}
-            onPress={() => console.log("press Vault button")}
-            label={"Vault"}
-          />
-        </View>
-
-        <View>
-          <TabButton
-            iconSource={"key"}
-            onPress={() => console.log("press Tool button")}
-            label={"Tool"}
-          />
-        </View>
-
-        <View>
-          <TabButton
-            iconSource={"user-circle-o"}
-            onPress={() => console.log("press Profile button")}
-            label={"Profile"}
-          />
-        </View>
-
-        <View>
-          <TabButton
-            iconSource={"gear"}
-            onPress={() => console.log("press Setting button")}
-            label={"Setting"}
-          />
-        </View>
-      </View>
-
-      <AddButton
-        iconSource={"plus"}
-        onPress={() => console.log("press Add button")}
-      />
+      {state.routes.map((route, index) => {
+        const label = route.name;
+        const iconSource = route.params.iconSource;
+        const isFocused = state.index === index;
+        // if (label === "Create") return null;
+        return (
+          <View>
+            <TabButton
+              iconSource={iconSource}
+              onPress={() => navigation.navigate(label)}
+              isFocused={isFocused}
+              label={label}
+            />
+          </View>
+        );
+      })}
     </View>
   );
 };
 
 const styles = StyleSheet.create({
   container: {
-    height: "100%",
-    bottom: 0,
-    paddingBottom: 8,
-    backgroundColor: "rgba(229, 229, 229, 1)", //#E5E5E5
-    alignItems: "flex-end",
     flexDirection: "row",
-    position: "absolute",
-    zIndex:1
-
-  },
-  tabContainer: {
-    flexDirection: "row",
+    // borderWidth: 3,
+    width: "75%",
+    paddingRight: 2,
   },
   text: {
     fontSize: 24,
@@ -69,3 +39,48 @@ const styles = StyleSheet.create({
 });
 
 export default TabBar;
+
+// const TabBar = ({ state, navigation }) => {
+//   return (
+//     <View style={styles.container}>
+//       <View style={styles.tabContainer}>
+//         <View>
+//           <TabButton
+//             iconSource={"home"}
+//             onPress={() => navigation.navigate(console.log(state.routes))}
+//             label={"Vault"}
+//           />
+//         </View>
+
+//         <View>
+//           <TabButton
+//             iconSource={"key"}
+//             onPress={() => navigation.navigate("Tool")}
+//             label={"Tool"}
+//           />
+//         </View>
+
+//         <View>
+//           <TabButton
+//             iconSource={"user-circle-o"}
+//             onPress={() => navigation.navigate("Profile")}
+//             label={"Profile"}
+//           />
+//         </View>
+
+//         <View>
+//           <TabButton
+//             iconSource={"gear"}
+//             onPress={() => navigation.navigate("Setting")}
+//             label={"Setting"}
+//           />
+//         </View>
+//       </View>
+
+//       <AddButton
+//         iconSource={"plus"}
+//         onPress={() => navigation.navigate("Create")}
+//       />
+//     </View>
+//   );
+// };

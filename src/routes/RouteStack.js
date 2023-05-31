@@ -3,8 +3,8 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 
 import { useLoginContext } from "../context/LoginProvider";
-import HomeStack from "./HomeStack";
 import LoginStack from "./LoginStack";
+import BottomTab from "./BottomTab";
 
 const Stack = createNativeStackNavigator();
 
@@ -15,8 +15,8 @@ function RouteStack() {
       <Stack.Navigator>
         {isLogged ? (
           <Stack.Screen
-            name="HomeStack"
-            component={HomeStack}
+            name="BottomTab"
+            component={BottomTab}
             options={{ headerShown: false }}
           ></Stack.Screen>
         ) : (
