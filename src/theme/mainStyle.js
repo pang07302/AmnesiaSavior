@@ -13,7 +13,9 @@ export const Header = ({ children }) => {
 export const Body = ({ children }) => {
   return (
     <View style={mainStyles.body}>
-      <ScrollView>{children}</ScrollView>
+      <ScrollView style={{ marginBottom: "1%", height: "100%" }}>
+        {children}
+      </ScrollView>
     </View>
   );
 };
@@ -27,10 +29,9 @@ const mainStyles = StyleSheet.create({
     position: "relative",
     height: "100%",
     width: "100%",
-    // position: "absolute",
-
-    borderWidth: 10,
-    borderColor: "black",
+    //marginVertical: "20%",
+    borderWidth: 2,
+    borderColor: "red",
   },
   footer: {
     // flex: 1,

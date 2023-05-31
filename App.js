@@ -13,6 +13,7 @@ import { useLoginContext } from "./src/context/LoginProvider";
 
 import AppProvider from "./src/context/AppProvider";
 import RouteStack from "./src/routes/RouteStack";
+import BankVault from "./src/components/forms/BankForm";
 
 const Stack = createNativeStackNavigator();
 export default function App() {
@@ -20,6 +21,7 @@ export default function App() {
     <AppProvider>
       <RouteStack />
     </AppProvider>
+    //<BankVault />
   );
 }
 

@@ -28,7 +28,7 @@ const TopBar = ({ title, leftButton, theme }) => {
         setDisplaySearchBar
       );
     case "record":
-      return renderRecord(title, leftButton, edit, setEdit);
+      return renderRecord(title, leftButton, displaySearchBar, edit, setEdit);
     default:
       return renderPrimary(title);
   }
@@ -110,7 +110,7 @@ const renderVault = (
   );
 };
 
-const renderRecord = (title, leftButton) => {
+const renderRecord = (title, leftButton, displaySearchBar) => {
   return (
     <View style={styles.container}>
       <View style={styles.upperContainer}>

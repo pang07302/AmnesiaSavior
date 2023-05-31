@@ -12,6 +12,7 @@ import { Header } from "../theme/mainStyle";
 import TopBar from "../components/TopBar";
 
 import { createStackNavigator } from "@react-navigation/stack";
+import NewVault from "../screens/NewVault";
 
 const Stack = createNativeStackNavigator();
 
@@ -84,6 +85,21 @@ function LoginStack() {
           ),
         })}
       />
+      <Stack.Screen
+        name='Create'
+        component={NewVault}
+        options={({ navigation, route }) => ({
+          title: "Create New Vault",
+          header: () => (
+            <Header>
+              <TopBar
+                title="Create New Vault"
+                leftButton={() => navigation.goBack()}
+                theme="vault"
+              ></TopBar>
+            </Header>
+          )
+          })}/>
       {/* <Stack.Screen name="Profile" component={Profile} />
       <Stack.Screen name="Settings" component={Settings} /> */}
     </Stack.Navigator>
