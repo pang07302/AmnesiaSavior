@@ -7,6 +7,7 @@ const InputField = ({
   onChangeText,
   keyboardType = "default",
   placeholder,
+  value,
   secureTextEntry = false,
   col = 56,
   multiline = false,
@@ -24,6 +25,7 @@ const InputField = ({
       <TextInput
         onChangeText={onChangeText}
         placeholder={placeholder}
+        value={value}
         multiline={multiline}
         style={[styles.inputField, { height: col }]}
       />

@@ -21,8 +21,8 @@ const mainStyles = StyleSheet.create({
     width: "100%",
     // position: "absolute",
     backgroundColor: "#FFFFFF",
-    borderWidth: 10,
-    borderColor: "black",
+    // borderWidth: 10,
+    // borderColor: "black",
   },
   footer: {
     position: "absolute",

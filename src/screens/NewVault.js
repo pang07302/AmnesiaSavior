@@ -20,6 +20,7 @@ const NewVault = () => {
     { label: "Website/App", value: "website/app" },
     { label: "Network Provider", value: "network provider" },
   ]);
+  const [title, setTitle] = useState("");
   return (
     <View style={styles.container}>
       <Body>
@@ -49,7 +50,8 @@ const NewVault = () => {
         >
           <InputField
             label={"Title"}
-            placeholder={"please enter a title(required), e.g. google account"}
+            value={title}
+            placeholder={"Please enter a title(required), e.g. google account"}
             onChangeText={() => console.log("text change...")}
           />
           {value === "bank account" ? <BankForm /> : <OtherForm />}

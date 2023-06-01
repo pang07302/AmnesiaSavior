@@ -5,12 +5,12 @@ import NewVault from "./NewVault";
 
 const VaultCreator = ({ isVisible, onClose }) => {
   return (
-    <Modal animationType="slide" transparent={true} visible={isVisible}>
+    <Modal animationType="slide" transparent={false} visible={isVisible}>
       <View style={styles.modalContent}>
         <View style={styles.titleContainer}>
-          <Text style={styles.title}>Create a Vault</Text>
+          <Text style={styles.title}>New Vault</Text>
           <Pressable onPress={onClose}>
-            <MaterialIcons name="close" color="#fff" size={22} />
+            <MaterialIcons name="close" color="black" size={22} />
           </Pressable>
         </View>
         <NewVault />
@@ -29,17 +29,19 @@ const styles = StyleSheet.create({
     bottom: 0,
   },
   titleContainer: {
-    height: "20%",
-    // borderTopRightRadius: 10,
-    // borderTopLeftRadius: 10,
-    paddingHorizontal: 20,
+    height: "18%",
+    backgroundColor: "#FFD94D",
+    borderBottomRightRadius: 40,
+    borderBottomLeftRadius: 40,
+    paddingHorizontal: 16,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
   },
   title: {
-    color: "#fff",
-    fontSize: 20,
+    color: "black",
+    fontSize: 36,
+    fontWeight: "bold",
   },
 });
 

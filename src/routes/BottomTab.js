@@ -5,9 +5,18 @@ import TopBar from "../components/TopBar";
 import TabBar from "../components/TabBar";
 import { AddButton } from "../components/buttons";
 import { View } from "react-native";
+import VaultCreator from "../screens/VaultCreator";
+import { useState } from "react";
 
 const Tab = createBottomTabNavigator();
 const BottomTab = () => {
+  const [isModalVisible, setIsModalVisible] = useState(false);
+  const onModalClose = () => {
+    setIsModalVisible(false);
+  };
+  const onModalOpen = () => {
+    setIsModalVisible(true);
+  };
   return (
     <Tab.Navigator
       initialRouteName="Vault"
@@ -15,10 +24,8 @@ const BottomTab = () => {
         <Footer>
           <TabBar {...props} />
           <View style={{ bottom: "4%", width: "25%" }}>
-            <AddButton
-              iconSource={"plus"}
-              onPress={() => navigation.navigate("Create")}
-            />
+            <AddButton iconSource={"plus"} onPress={onModalOpen} />
+            <VaultCreator isVisible={isModalVisible} onClose={onModalClose} />
           </View>
         </Footer>
       )}
@@ -28,7 +35,7 @@ const BottomTab = () => {
         component={HomeScreen}
         initialParams={{ iconSource: "home" }}
         options={({ navigation, route }) => ({
-          header: () => <TopBar title="Vault" theme="primary"></TopBar>,
+          header: () => <TopBar title="Vault" theme="vault"></TopBar>,
         })}
       ></Tab.Screen>
       <Tab.Screen
